@@ -1,6 +1,6 @@
-class CreateEntities < ActiveRecord::Migration[7.1]
+class CreateMovements < ActiveRecord::Migration[7.1]
   def change
-    create_table :entities do |t|
+    create_table :movements do |t|
       t.integer :author_id
       t.string :name
       t.float :amount
@@ -8,6 +8,6 @@ class CreateEntities < ActiveRecord::Migration[7.1]
 
     end
     
-    add_foreign_key :entities, :users, column: :author_id
+    add_foreign_key :movements, :users, column: :author_id
   end
 end
