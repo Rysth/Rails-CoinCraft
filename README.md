@@ -142,7 +142,8 @@ Feel free to check the [issues page](../../issues/).
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thanks to my family members for supporting me during Microverse, and their team.
+Special thanks to [Gregoire Vella](https://www.behance.net/gregoirevella) from providing us with an excellent resource from their Behance account.
+Also, I would like to thanks to my family members for supporting me during Microverse, and their team.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
