@@ -27,3 +27,16 @@
   --CL-secondary: #5fb523;
   --CL-neutral: #434b54;
 }
+
+* {
+  font-family: 'Proxima Nova', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
