@@ -1,3 +1,27 @@
+/* Proxima Nova Bold */
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('proxima_bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Proxima Nova Regular */
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('proxima_regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Proxima Nova Light */
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('proxima_light.otf') format('opentype');
+  font-weight: lighter; /* Adjust as needed */
+  font-style: normal;
+}
+
 :root {
   --CL-primary: #3778c2;
   --CL-secondary: #5fb523;
