@@ -12,8 +12,20 @@
   </head>
 
   <body class="h-full">
-    <main class="h-full p-4">
-      <%= yield %>
+    <% if alert %>
+      <header class="fixed p-3 bg-red-500 rounded-md top-5 right-5">
+        <p class="text-white"><%= alert %></p>
+      </header>
+    <% elsif notice %>
+      <p><%= notice %></p>
+      <header class="fixed p-3 bg-green-500 rounded-md top-5 right-5">
+        <p class="text-white"><%= notice %></p>
+      </header>
+    <% end %>
+    <main class="h-full sm:p-4">
+      <section class="grid sm:p-4 mx-auto max-w-[370px] place-items-center sm:border sm:rounded-3xl sm:shadow-2xl bg-[var(--CL-neutral)] h-full">
+        <%= yield %>
+      </section>
     </main>
   </body>
 </html>
