@@ -1,0 +1,12 @@
+<section class="grid h-full sm:p-4 mx-auto max-w-[370px] place-items-center sm:border sm:rounded-3xl sm:shadow-2xl bg-[var(--CL-neutral)]">
+  <article class="relative flex items-center w-full h-full p-2 bg-white sm:rounded-2xl">
+    <header class="flex items-center justify-center w-full gap-2 mb-5 text-center">
+      <%= image_tag 'brand.svg', class: 'w-10 sm:w-12 md:w-14' %>
+      <h1 class="text-5xl sm:text-5xl">Coin<span class="text-[var(--CL-primary)]">Craft</span></h1>
+    </header>
+    <div class="absolute left-0 grid w-full px-2 text-sm bottom-20">
+      <%= link_to 'Log In', new_user_session_path, class:'p-2 py-4 uppercase bg-[var(--CL-primary)] w-full block text-white md:hover:bg-black md:hover:text-white md:transition tracking-wide text-center' %>
+      <%= link_to 'Sign Up', new_user_registration_path, class: 'block w-full p-2 py-4 tracking-wide uppercase md:hover:bg-black md:hover:text-white md:transition text-center' %>
+    </div>
+  </article>
+</section>
