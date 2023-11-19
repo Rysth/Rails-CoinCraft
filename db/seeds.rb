@@ -3,7 +3,7 @@ require 'faker'
 
 # Create Users
 10.times do
-  User.create(name: Faker::Name.name)
+  User.create(name: Faker::Name.name, email: Faker::Internet.email, password: Faker::Internet.password)
 end
 
 # Create Movements
@@ -13,5 +13,5 @@ end
 
 # Create Groups
 20.times do
-  Group.create(user_id: User.pluck(:id).sample, movement_id: Movement.pluck(:id).sample, name: Faker::Team.name, icon: Faker::Lorem.word)
+  Category.create(user_id: User.pluck(:id).sample, movement_id: Movement.pluck(:id).sample, name: Faker::Team.name, icon: Faker::Lorem.word)
 end

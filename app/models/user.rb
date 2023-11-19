@@ -4,5 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :validatable, :rememberable
   has_many :movements
-  has_many :movements, through: :groups
+  has_many :movements, through: :categories
 end

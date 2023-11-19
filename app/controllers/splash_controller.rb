@@ -1,3 +1,7 @@
 class SplashController < ApplicationController
-  def index; end
+  skip_before_action :authenticate_user!
+
+  def index
+    redirect_to categories_path if current_user
+  end
 end

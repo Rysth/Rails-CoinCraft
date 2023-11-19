@@ -14,14 +14,14 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_17_234754) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "groups", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "icon"
     t.datetime "created_at", precision: nil
     t.bigint "user_id"
     t.bigint "movement_id"
-    t.index ["movement_id"], name: "index_groups_on_movement_id"
-    t.index ["user_id"], name: "index_groups_on_user_id"
+    t.index ["movement_id"], name: "index_categories_on_movement_id"
+    t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
   create_table "movements", force: :cascade do |t|
@@ -53,7 +53,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_17_234754) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "groups", "movements"
-  add_foreign_key "groups", "users"
+  add_foreign_key "categories", "movements"
+  add_foreign_key "categories", "users"
   add_foreign_key "movements", "users", column: "author_id"
 end
