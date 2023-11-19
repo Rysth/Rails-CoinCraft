@@ -1,5 +1,5 @@
 <article class="w-full h-full bg-gray-100 sm:rounded-2xl">
-  <header class="flex items-center justify-between w-full gap-2 text-sm text-center p-4 bg-[var(--CL-primary)] text-white rounded-t-xl">
+  <header class="flex items-center justify-between w-full gap-2 text-sm text-center p-4 bg-[var(--CL-primary)] text-white sm:rounded-t-xl">
     <a href="<%=root_path%>" class="flex items-center gap-1">
      <%= image_tag 'brand.svg', class: 'w-6' %>
      CoinCraft
@@ -14,7 +14,8 @@
           <picture>
             <img src="https://placehold.co/45x45" alt="icon">
           </picture>
-          <h2><%= category.name %></h2>
+          <h2 class="text-sm truncate text-ellipsis max-w-[10rem] font-normal"><%= category.name %></h2>
+          <p class="ml-auto text-lg font-bold">$500</p>
         </a>
       </li>
     <% end %>

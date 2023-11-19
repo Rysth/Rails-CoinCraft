@@ -31,7 +31,13 @@
   background-color: var(
     --CL-primary
   ); /* Set the color of the scrollbar thumb */
-  border-radius: 0 0 50px 0; /* Set the border-radius of the scrollbar thumb */
+  border-radius: 0px; /* Set the border-radius of the scrollbar thumb */
+}
+
+@media (min-width: 640px) {
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0 0 50px 0; /* Set the border-radius of the scrollbar thumb */
+  }
 }
 
 ::-webkit-scrollbar-track {
