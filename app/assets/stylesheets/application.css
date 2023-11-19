@@ -28,10 +28,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(
-    --CL-primary
-  ); /* Set the color of the scrollbar thumb */
-  border-radius: 0px; /* Set the border-radius of the scrollbar thumb */
+  background-color:
+    var(
+      --CL-primary
+    ); /* Set the color of the scrollbar thumb */
 }
 
 @media (min-width: 640px) {
