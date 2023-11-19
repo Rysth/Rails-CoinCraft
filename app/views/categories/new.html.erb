@@ -6,7 +6,6 @@
     <h1 class="text-sm font-normal tracking-wider text-white uppercase pointer-events-none ">New Category</h1>
   </header>
   <div>
-      
     <%= form_for @category, url: categories_path, method: :post do |f| %>
       <fieldset>
          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Name', class:'w-full border-x-transparent border-y  border-t-2   border-gray-200 outline-1 focus:border-transparent focus:ring-0', required: true %>

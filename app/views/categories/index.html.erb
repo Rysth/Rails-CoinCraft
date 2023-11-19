@@ -8,7 +8,6 @@
   </header>
   <div class="h-full overflow-auto max-h-[650px] sm:rounded-b-2xl">
     <ul class="relative flex flex-col h-full gap-3 p-0 py-3 list-none">
-    
     <% @categories.each do |category| %>
       <li class="bg-white md:hover:shadow-xl md:hover:-translate-y-1 md:active:scale-95 md:transition">
         
@@ -17,7 +16,7 @@
             <img src="<%= category.icon %>" alt="icon" class="object-cover">
           </picture>
           <h2 class="text-sm truncate text-ellipsis max-w-[10rem] font-normal"><%= category.name %></h2>
-          <p class="ml-auto text-lg font-bold">$500</p>
+          <p class="ml-auto text-lg font-bold"><%= number_to_currency(@total_amount, precision: 2) %></p>
         </a>
       </li>
     <% end %>

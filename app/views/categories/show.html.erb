@@ -6,8 +6,17 @@
     <h1 class="text-sm font-normal tracking-wider text-white uppercase pointer-events-none "><%= @category.name %></h1>
   </header>
   <div class="h-full overflow-auto max-h-[650px] sm:rounded-b-2xl">
+    <header class="bg-white md:transition">
+      <div  class="flex items-center gap-2 p-2 py-4">
+        <picture class="w-12 h-12">
+          <img src="<%= @category.icon %>" alt="icon" class="object-cover">
+        </picture>
+        <h2 class="text-lg font-normal truncate text-ellipsis max-w-[10rem]"><%= @category.name %></h2>
+        <p class="ml-auto text-2xl font-bold"><%= number_to_currency(@total_amount, precision: 2) %></p>
+      </div>
+    </header>
+    <h3 class="mb-3 text-sm font-normal text-center uppercase bg-[var(--CL-neutral)] text-white">Transactions</h3>
     <ul class="relative flex flex-col h-full gap-3 p-0 py-3 list-none">
-    
     <% @movements.each do |movement| %>
       <li class="bg-white md:hover:shadow-xl md:hover:-translate-y-1 md:active:scale-95 md:transition">
         <a href="<%= category_movement(movement.id) %>" class="flex items-center gap-2 p-2">

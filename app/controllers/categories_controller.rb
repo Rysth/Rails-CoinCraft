@@ -1,11 +1,14 @@
 class CategoriesController < ApplicationController
   def index
     @categories = Category.all
+    @movements = current_user.movements.includes(@category).order(created_at: :asc)
+    @total_amount = @movements.sum(&:amount)
   end
 
   def show
     @category = Category.find(params[:id])
     @movements = current_user.movements.includes(@category).order(created_at: :asc)
+    @total_amount = @movements.sum(&:amount)
   end
 
   def new
