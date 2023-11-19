@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @movements = current_user.movements
+    @movements = current_user.movements.includes(@category).order(created_at: :asc)
   end
 
   def new

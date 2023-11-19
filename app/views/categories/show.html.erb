@@ -10,7 +10,6 @@
     
     <% @movements.each do |movement| %>
       <li class="bg-white md:hover:shadow-xl md:hover:-translate-y-1 md:active:scale-95 md:transition">
-        
         <a href="<%= category_path(category.id) %>" class="flex items-center gap-2 p-2">
           <picture class="w-12 h-12">
             <img src="<%= category.icon %>" alt="icon" class="object-cover">
