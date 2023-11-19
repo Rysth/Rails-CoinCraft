@@ -5,4 +5,25 @@
     </a>
     <h1 class="text-sm font-normal tracking-wider text-white uppercase pointer-events-none "><%= @category.name %></h1>
   </header>
+  <div class="h-full overflow-auto max-h-[650px] sm:rounded-b-2xl">
+    <ul class="relative flex flex-col h-full gap-3 p-0 py-3 list-none">
+    
+    <% @movements.each do |movement| %>
+      <li class="bg-white md:hover:shadow-xl md:hover:-translate-y-1 md:active:scale-95 md:transition">
+        
+        <a href="<%= category_path(category.id) %>" class="flex items-center gap-2 p-2">
+          <picture class="w-12 h-12">
+            <img src="<%= category.icon %>" alt="icon" class="object-cover">
+          </picture>
+          <h2 class="text-sm truncate text-ellipsis max-w-[10rem] font-normal"><%= category.name %></h2>
+          <p class="ml-auto text-lg font-bold">$500</p>
+        </a>
+      </li>
+    <% end %>
+      <li class="bg-[var(--CL-secondary)] md:active:scale-95 md:transition mt-auto">
+        <%= link_to 'Add a New Category', new_category_path , class: 'gap-2 p-2 text-white uppercase text-sm font-bold py-3 text-center block' %>
+      </li>
+    </ul>
+  </div>
+
 </article>
