@@ -4,20 +4,18 @@
      <%= image_tag 'brand.svg', class: 'w-6' %>
      CoinCraft
     </a>
-    <h1 class="text-sm font-normal tracking-wider text-white uppercase pointer-events-none ">Categories</h1>
+    <h1 class="text-sm font-normal tracking-wider text-white uppercase pointer-events-none">Categories</h1>
   </header>
   <div class="h-full overflow-auto max-h-[650px] sm:rounded-b-2xl">
     <ul class="relative flex flex-col h-full gap-3 p-0 py-3 list-none">
-    
     <% @categories.each do |category| %>
       <li class="bg-white md:hover:shadow-xl md:hover:-translate-y-1 md:active:scale-95 md:transition">
-        
         <a href="<%= category_path(category.id) %>" class="flex items-center gap-2 p-2">
           <picture class="w-12 h-12">
             <img src="<%= category.icon %>" alt="icon" class="object-cover">
           </picture>
           <h2 class="text-sm truncate text-ellipsis max-w-[10rem] font-normal"><%= category.name %></h2>
-          <p class="ml-auto text-lg font-bold">$500</p>
+          <p class="ml-auto text-lg font-bold"><%= number_to_currency(@total_amount, precision: 2) %></p>
         </a>
       </li>
     <% end %>
