@@ -7,7 +7,7 @@
     <h1 class="text-sm font-normal tracking-wider text-white uppercase pointer-events-none ">Categories</h1>
   </header>
   <div class="h-full overflow-auto max-h-[650px] sm:rounded-b-2xl">
-    <ul class="relative grid h-full gap-3 p-0 py-3 list-none">
+    <ul class="relative flex flex-col h-full gap-3 p-0 py-3 list-none">
     
     <% @categories.each do |category| %>
       <li class="bg-white md:hover:shadow-xl md:hover:-translate-y-1 md:active:scale-95 md:transition">
@@ -21,7 +21,7 @@
         </a>
       </li>
     <% end %>
-      <li class="bg-[var(--CL-secondary)] md:active:scale-95 md:transition">
+      <li class="bg-[var(--CL-secondary)] md:active:scale-95 md:transition mt-auto">
         <%= link_to 'Add a New Category', new_category_path , class: 'gap-2 p-2 text-white uppercase text-sm font-bold py-3 text-center block' %>
       </li>
     </ul>
