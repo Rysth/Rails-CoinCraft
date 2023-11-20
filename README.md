@@ -1,8 +1,8 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="https://placehold.co/1500x450" />
-  <h3><b>Your Name</b></h3>
+  <img src="./app/assets/images/banner.png" />
+  <h3><b>John Palacios</b></h3>
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -25,9 +25,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Ruby on Rails Template <a name="about-project"></a>
+# 📖 Rails - CoinCraft<a name="about-project"></a>
 
-**Ruby on Rails Template** description...
+**Rails - CoinCraft** is a user-friendly budget management application developed with Rails 7, TailwindCSS, and ERB, designed to simplify your financial tracking experience. Whether you're a seasoned budgeter or just starting, CoinCraft empowers you to effortlessly manage your finances, categorize transactions, and gain insights into your spending patterns. 📊💸
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -59,9 +59,12 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Key Feature**
-- **Key Feature**
-- **Key Feature**
+- User-Friendly Interface 💻
+- Easy Category Creation 📝🎨
+- Effortless Transaction Recording 🔄💰
+- Real-Time Total Amount Display 📈💡
+- Responsive Design with TailwindCSS 📱🌐
+- Secure and Private 🔒🤐
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -112,10 +115,10 @@ Use this command to fix **Stylelint** Errors:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Author1**
+👤 **John Palacios**
 
-- GitHub: [@rysthcraft](https://github.com/Rysth)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/john-palacios-rysthcraft)
+- GitHub: [RysthCraft](https://github.com/Rysth)
+- LinkedIn: [John Palacios](https://www.linkedin.com/in/john-palacios-rysthcraft)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -123,8 +126,10 @@ Use this command to fix **Stylelint** Errors:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Future Feature**
-- [ ] **Future Feature**
+- [] Set and Achieve Budget Goals 🎯🚀
+- [] Visualize Your Finances with Custom Reports 📊🔍
+- [] Seamlessly Sync with External Accounts 🔄🏦
+- [] Receive Personalized Expense Reminders ⏰💡
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
