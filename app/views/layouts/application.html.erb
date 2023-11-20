@@ -14,11 +14,11 @@
 
   <body class="h-full">
     <% if alert %>
-      <header class="fixed p-3 bg-red-500 rounded-md top-5 right-5">
+      <header class="fixed p-3 bg-red-500 rounded-md hidden sm:inline-block text-sm sm:text-base top-3 sm:right-5 z-[1000]">
         <p class="text-white"><%= alert %></p>
       </header>
     <% elsif notice %>
-      <header class="fixed p-3 bg-[var(--CL-secondary)] rounded-md top-5 right-5">
+      <header class="fixed p-3 bg-[var(--CL-secondary)] rounded-md hidden sm:inline-block text-sm sm:text-base top-3 sm:right-5 z-[1000]">
         <p class="text-white"><%= notice %></p>
       </header>
     <% end %>
