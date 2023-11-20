@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
 
   def create
     @category = current_user.categories.build(set_params)
-    if @category.save!
+    if @category.save
       redirect_to categories_path, notice: 'Category created successfully'
     else
       render :new, alert: 'Error creating the Category'

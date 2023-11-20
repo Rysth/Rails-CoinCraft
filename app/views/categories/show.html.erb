@@ -20,12 +20,9 @@
     <% if @movements %>
       <% @movements.each do |movement| %>
         <li class="bg-white md:hover:shadow-xl md:hover:-translate-y-1 md:active:scale-95 md:transition">
-          <a href="<%= category_movement(movement.id) %>" class="flex items-center gap-2 p-2">
-            <picture class="w-12 h-12">
-              <img src="<%= category.icon %>" alt="icon" class="object-cover">
-            </picture>
-            <h2 class="text-sm truncate text-ellipsis max-w-[10rem] font-normal"><%= category.name %></h2>
-            <p class="ml-auto text-lg font-bold">$500</p>
+          <a href="<%= category_movement_path(movement.id) %>" class="flex items-center gap-2 p-2">
+            <h2 class="text-sm truncate text-ellipsis max-w-[10rem] font-normal"><%= movement.name %></h2>
+            <p class="ml-auto text-lg font-bold"><%= number_to_currency(movement.amount, precision: 2) %></p>
           </a>
         </li>
       <% end %>

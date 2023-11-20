@@ -1,4 +1,4 @@
 class Movement < ApplicationRecord
   belongs_to :user, foreign_key: 'author_id'
-  has_many :categories
+  has_and_belongs_to_many :categories
 end

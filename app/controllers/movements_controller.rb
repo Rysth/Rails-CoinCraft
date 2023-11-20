@@ -5,7 +5,13 @@ class MovementsController < ApplicationController
   end
 
   def create
-    @category = Category.find(params[:category_id])
+    @category = Category.find_by(id: params[:category_id])
+
+    if @category.nil?
+      redirect_to root_path, alert: 'Category not found'
+      return
+    end
+
     @movement = @category.movements.build(set_params)
     @movement.author_id = current_user.id
     if @movement.save

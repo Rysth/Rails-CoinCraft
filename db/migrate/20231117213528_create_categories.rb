@@ -7,6 +7,5 @@ class CreateCategories < ActiveRecord::Migration[7.1]
     end
 
     add_reference :categories, :user, foreign_key: true
-    add_reference :categories, :movements, foreign_key: true
   end
 end
