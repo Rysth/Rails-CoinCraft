@@ -1,10 +1,7 @@
 class CategoriesController < ApplicationController
   def index
     @categories = current_user.categories.includes(:movements)
-    @movements = []
-    @categories.each do |category|
-      @movements += category.movements.where(author_id: current_user.id).to_a
-    end
+    @movements = @categories.flat_map { |category| category.movements.where(author_id: current_user.id).to_a }
   end
 
   def show
@@ -25,6 +22,8 @@ class CategoriesController < ApplicationController
       render :new, alert: 'Error creating the Category'
     end
   end
+
+  private
 
   def set_params
     params.require(:category).permit(:name, :icon)
