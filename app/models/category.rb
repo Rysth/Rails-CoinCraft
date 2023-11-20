@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
   belongs_to :user
-  belongs_to :movement
+  has_many :movements
 end

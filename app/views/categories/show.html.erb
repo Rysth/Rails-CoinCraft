@@ -17,16 +17,18 @@
     </header>
     <h3 class="mb-3 text-sm font-normal text-center uppercase bg-[var(--CL-neutral)] text-white">Transactions</h3>
     <ul class="relative flex flex-col h-full gap-3 p-0 py-3 list-none">
-    <% @movements.each do |movement| %>
-      <li class="bg-white md:hover:shadow-xl md:hover:-translate-y-1 md:active:scale-95 md:transition">
-        <a href="<%= category_movement(movement.id) %>" class="flex items-center gap-2 p-2">
-          <picture class="w-12 h-12">
-            <img src="<%= category.icon %>" alt="icon" class="object-cover">
-          </picture>
-          <h2 class="text-sm truncate text-ellipsis max-w-[10rem] font-normal"><%= category.name %></h2>
-          <p class="ml-auto text-lg font-bold">$500</p>
-        </a>
-      </li>
+    <% if @movements %>
+      <% @movements.each do |movement| %>
+        <li class="bg-white md:hover:shadow-xl md:hover:-translate-y-1 md:active:scale-95 md:transition">
+          <a href="<%= category_movement(movement.id) %>" class="flex items-center gap-2 p-2">
+            <picture class="w-12 h-12">
+              <img src="<%= category.icon %>" alt="icon" class="object-cover">
+            </picture>
+            <h2 class="text-sm truncate text-ellipsis max-w-[10rem] font-normal"><%= category.name %></h2>
+            <p class="ml-auto text-lg font-bold">$500</p>
+          </a>
+        </li>
+      <% end %>
     <% end %>
       <li class="bg-[var(--CL-secondary)] md:active:scale-95 md:transition mt-auto">
         <%= link_to 'Add a New Transaction', new_category_movement_path(@category) , class: 'gap-2 p-2 text-white uppercase text-sm font-bold py-3 text-center block' %>

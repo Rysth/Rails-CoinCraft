@@ -3,11 +3,11 @@
     <a href="<%= category_path(@category) %>" class="flex items-center gap-1">
       <i class="text-white text-md fa-solid fa-arrow-left"></i>
     </a>
-    <h1 class="text-sm font-normal tracking-wider text-white uppercase pointer-events-none ">New Movement</h1>
+    <h1 class="text-sm font-normal tracking-wider text-white uppercase pointer-events-none ">New Transaction</h1>
   </header>
   <div>
       
-    <%= form_for @movement, url: category_path(@category), method: :post do |f| %>
+    <%= form_for @movement, url: category_movements_path(@category), method: :post do |f| %>
       <fieldset>
          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Name', class:'w-full border-x-transparent border-y  border-t-2   border-gray-200 outline-1 focus:border-transparent focus:ring-0', required: true %>
       </fieldset>
