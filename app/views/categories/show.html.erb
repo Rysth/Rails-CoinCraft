@@ -8,14 +8,14 @@
   <div class="h-full overflow-auto max-h-[650px] sm:rounded-b-2xl">
     <header class="my-3 bg-white md:transition" >
       <div  class="flex items-center gap-2 p-2 py-3">
-        <picture class="w-12 h-12">
-          <img src="<%= @category.icon %>" alt="icon" class="object-cover">
+        <picture class="w-12 h-12 ">
+          <img src="<%= @category.icon %>" alt="icon" class="object-cover border rounded-md">
         </picture>
         <h2 class="text-base truncate text-ellipsis max-w-[10rem] font-normal"><%= @category.name %></h2>
         <p class="ml-auto text-2xl font-bold"><%= number_to_currency(@total_amount, precision: 2) %></p>
       </div>
     </header>
-    <h3 class="mb-3 text-sm font-normal text-center uppercase bg-[var(--CL-neutral)] text-white">Transactions</h3>
+    <h3 class="text-sm font-normal text-center uppercase bg-[var(--CL-neutral)] text-white">Transactions</h3>
     <ul class="relative flex flex-col h-full gap-3 p-0 py-3 list-none">
     <% if @movements %>
       <% @movements.each do |movement| %>

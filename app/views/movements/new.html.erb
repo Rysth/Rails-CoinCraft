@@ -11,7 +11,7 @@
          <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Name', class:'w-full border-x-transparent border-y  border-t-2   border-gray-200 outline-1 focus:border-transparent focus:ring-0', required: true %>
       </fieldset>
       <fieldset>
-          <%= f.number_field :amount, autofocus: true, autocomplete: "amount", placeholder: 'Amount', class:'w-full border-x-transparent border-y  border-t-2 border-gray-200 outline-1 focus:border-transparent focus:ring-0', required: true %>
+          <%= f.text_field :amount, autofocus: true, autocomplete: "amount", placeholder: 'Amount', class:'w-full border-x-transparent border-y  border-t-2 border-gray-200 outline-1 focus:border-transparent focus:ring-0', required: true %>
       </fieldset>
       <fieldset class="mt-5 text-center actions text-[var(--CL-neutral)]">
         <%= f.submit "Save", class: "p-2 text-sm bg-[var(--CL-primary)] w-full block text-white md:hover:bg-black md:hover:text-white md:transition tracking-wide text-center cursor-pointer" %>

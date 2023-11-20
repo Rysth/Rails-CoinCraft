@@ -13,6 +13,7 @@ class MovementsController < ApplicationController
     end
 
     @movement = Movement.new(set_params)
+    @movement.amount.to_f
     @movement.author_id = current_user.id
     @category.movements << @movement
     if @movement.save!

@@ -4,15 +4,18 @@
      <%= image_tag 'brand.svg', class: 'w-6' %>
      CoinCraft
     </a>
-    <h1 class="text-sm font-normal tracking-wider text-white uppercase pointer-events-none">Categories</h1>
+    <%= button_to 'Log Out', destroy_user_session_path, method: :delete, class: 'gap-2 p-1 text-white uppercase text-xs font-bold py-1.5 text-center block bg-red-600 rounded-md' %>
   </header>
   <div class="h-full overflow-auto max-h-[650px] sm:rounded-b-2xl">
+    <header class="text-center bg-[var(--CL-neutral)]">
+    <h1 class="text-sm font-normal tracking-wider text-white uppercase pointer-events-none">Categories</h1>
+    </header>
     <ul class="relative flex flex-col h-full gap-3 p-0 py-3 list-none">
     <% @categories.each do |category| %>
       <li class="bg-white md:hover:shadow-xl md:hover:-translate-y-1 md:active:scale-95 md:transition">
         <a href="<%= category_path(category.id) %>" class="flex items-center gap-2 p-2">
-          <picture class="w-12 h-12">
-            <img src="<%= category.icon %>" alt="icon" class="object-cover">
+          <picture class="w-10 h-10">
+            <img src="<%= category.icon %>" alt="icon" class="object-cover border rounded-md">
           </picture>
           <h2 class="text-sm truncate text-ellipsis max-w-[10rem] font-normal"><%= category.name %></h2>
           <p class="ml-auto text-lg font-bold"><%= number_to_currency((category.movements.sum(&:amount)), precision: 2) %></p>
