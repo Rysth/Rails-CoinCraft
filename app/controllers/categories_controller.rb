@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_user, only: %i[index show create]
-  before_action :set_category, only: %i[create]
+  before_action :set_category, only: %i[show]
 
   def index
     @categories = @user.categories.includes(:movements)
@@ -8,7 +8,6 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = @user.categories.find(params[:id])
     @movements = @category.movements.where(author_id: current_user.id).order(created_at: :desc)
     @total_amount = @movements.sum(&:amount)
   end
@@ -18,7 +17,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = current_user.categories.build(set_params)
+    @category = @user.categories.build(set_params)
     if @category.save
       redirect_to categories_path, notice: 'Category created successfully'
     else
