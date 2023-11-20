@@ -28,7 +28,7 @@ RSpec.describe Category, type: :model do
     expect(new_category).to_not be_valid
   end
 
-  it 'has and belongs to a user ' do
+  it 'has and belongs to a user' do
     category = Category.reflect_on_association(:user)
     expect(category.macro).to eq(:belongs_to)
   end
