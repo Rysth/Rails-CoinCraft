@@ -82,4 +82,5 @@ test:
 #
 production:
   <<: *default
+  port: 5432
   url: <%= ENV['DATABASE_URL'] %>
