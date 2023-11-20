@@ -1,19 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html class="h-full">
   <head>
-    <title>RoRTemplate</title>
+    <title>Rails | CoinCraft | John Palacios</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= favicon_link_tag 'brand.svg' %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
+  <body class="h-full">
+    <% if alert %>
+      <header class="fixed p-3 bg-red-500 rounded-md hidden sm:inline-block text-sm sm:text-base top-3 sm:right-5 z-[1000]">
+        <p class="text-white"><%= alert %></p>
+      </header>
+    <% elsif notice %>
+      <header class="fixed p-3 bg-[var(--CL-secondary)] rounded-md hidden sm:inline-block text-sm sm:text-base top-3 sm:right-5 z-[1000]">
+        <p class="text-white"><%= notice %></p>
+      </header>
+    <% end %>
+    <main class="h-full sm:p-4 min-h-[650px] sm:min-h-[772px]">
+      <section class="grid sm:p-4 mx-auto max-w-[370px] place-items-center sm:border sm:rounded-3xl sm:shadow-2xl bg-[var(--CL-neutral)] h-full relative">
+        <%= yield %>
+      </section>
     </main>
   </body>
 </html>
