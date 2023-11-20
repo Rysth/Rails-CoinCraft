@@ -21,7 +21,7 @@ RSpec.describe User, type: :model do
     expect(user.macro).to eq(:has_many)
   end
 
-  it 'requires a unique email' do
+  it 'requires a unique icon' do
     User.create(name: 'Existing User', email: 'existing@example.com')
     new_user = User.new(name: 'New User', email: 'existing@example.com')
     expect(new_user).to_not be_valid
