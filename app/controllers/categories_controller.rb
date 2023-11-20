@@ -1,13 +1,15 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = current_user.categories.all
-    @movements = Movement.where(author_id: current_user.id)
-    @total_amount = @movements.sum(&:amount)
+    @categories = current_user.categories.includes(:movements)
+    @movements = []
+    @categories.each do |category|
+      @movements += category.movements.where(author_id: current_user.id).to_a
+    end
   end
 
   def show
     @category = current_user.categories.find(params[:id])
-    @movements = Movement.where(author_id: current_user.id)
+    @movements = @category.movements.where(author_id: current_user.id).order(created_at: :desc)
     @total_amount = @movements.sum(&:amount)
   end
 
@@ -17,7 +19,7 @@ class CategoriesController < ApplicationController
 
   def create
     @category = current_user.categories.build(set_params)
-    if @category.save!
+    if @category.save
       redirect_to categories_path, notice: 'Category created successfully'
     else
       render :new, alert: 'Error creating the Category'
