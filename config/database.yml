@@ -82,6 +82,4 @@ test:
 #
 production:
   <<: *default
-  database: rails_coincraft_production
-  username: rails_coincraft
-  password: <%= ENV["RAILS_COINCRAFT_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
