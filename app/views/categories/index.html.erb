@@ -15,7 +15,7 @@
             <img src="<%= category.icon %>" alt="icon" class="object-cover">
           </picture>
           <h2 class="text-sm truncate text-ellipsis max-w-[10rem] font-normal"><%= category.name %></h2>
-          <p class="ml-auto text-lg font-bold"><%= number_to_currency(@total_amount, precision: 2) %></p>
+          <p class="ml-auto text-lg font-bold"><%= number_to_currency((category.movements.sum(&:amount)), precision: 2) %></p>
         </a>
       </li>
     <% end %>
