@@ -1,19 +1,19 @@
-<article class="w-full h-full bg-gray-100 sm:rounded-2xl">
+<article class="relative w-full h-full bg-gray-100 sm:rounded-2xl">
   <header class="flex items-center justify-between w-full gap-2 text-sm text-center p-4 bg-[var(--CL-primary)] text-white sm:rounded-t-xl">
-    <a href="<%=root_path%>" class="flex items-center gap-1">
+    <a href="<%=root_path%>" class="flex items-center gap-1 md:hover:grayscale md:transition">
      <%= image_tag 'brand.svg', class: 'w-6' %>
      CoinCraft
     </a>
-    <%= button_to 'Log Out', destroy_user_session_path, method: :delete, class: 'gap-2 p-1 text-white uppercase text-xs font-bold py-1.5 text-center block bg-red-600 rounded-md' %>
+    <%= button_to 'Log Out', destroy_user_session_path, method: :delete, class: 'p-1 text-white uppercase text-xs font-bold py-1.5 text-center block bg-red-600 rounded-md md:hover:bg-black md:transition' %>
   </header>
-  <div class="h-full overflow-auto max-h-[650px] sm:rounded-b-2xl">
+  <div class=" overflow-auto max-h-[650px] sm:rounded-b-2xl h-full">
     <header class="text-center bg-[var(--CL-neutral)]">
-    <h1 class="text-sm font-normal tracking-wider text-white uppercase pointer-events-none">Categories</h1>
+      <h1 class="text-xl tracking-wider text-white uppercase pointer-events-none">Categories</h1>
     </header>
-    <ul class="relative flex flex-col h-full gap-3 p-0 py-3 list-none">
+    <ul class="relative flex flex-col gap-3 p-0 py-3 list-none">
     <% @categories.each do |category| %>
       <li class="bg-white md:hover:shadow-xl md:hover:-translate-y-1 md:active:scale-95 md:transition">
-        <a href="<%= category_path(category.id) %>" class="flex items-center gap-2 p-2">
+        <a href="<%= category_path(category.id) %>" class="flex items-center gap-2 p-2 px-4">
           <picture class="w-10 h-10">
             <img src="<%= category.icon %>" alt="icon" class="object-cover border rounded-md">
           </picture>
@@ -22,10 +22,9 @@
         </a>
       </li>
     <% end %>
-      <li class="bg-[var(--CL-secondary)] md:active:scale-95 md:transition mt-auto">
-        <%= link_to 'Add a New Category', new_category_path , class: 'gap-2 p-2 text-white uppercase text-sm font-bold py-3 text-center block' %>
-      </li>
     </ul>
   </div>
-
+  <div class="absolute mt-auto bottom-5 right-3">
+     <%= link_to 'Add a New Category', new_category_path , class: 'bg-[var(--CL-secondary)] md:active:scale-95 md:hover:-translate-y-1 md:hover:shadow-xl md:transition gap-2 p-2 text-white uppercase text-sm font-bold py-3 text-center block rounded-md' %>
+  </div>
 </article>
