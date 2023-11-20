@@ -126,10 +126,10 @@ Use this command to fix **Stylelint** Errors:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [] Set and Achieve Budget Goals 🎯🚀
-- [] Visualize Your Finances with Custom Reports 📊🔍
-- [] Seamlessly Sync with External Accounts 🔄🏦
-- [] Receive Personalized Expense Reminders ⏰💡
+- [ ] Set and Achieve Budget Goals 🎯🚀
+- [ ] Visualize Your Finances with Custom Reports 📊🔍
+- [ ] Seamlessly Sync with External Accounts 🔄🏦
+- [ ] Receive Personalized Expense Reminders ⏰💡
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
