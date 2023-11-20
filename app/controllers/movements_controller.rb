@@ -1,17 +1,12 @@
 class MovementsController < ApplicationController
+  before_action :set_user, only: %i[new create]
+  before_action :set_category, only: %i[new create]
+
   def new
-    @category = Category.find(params[:category_id])
     @movement = Movement.new
   end
 
   def create
-    @category = Category.find_by(id: params[:category_id])
-
-    if @category.nil?
-      redirect_to root_path, alert: 'Category not found'
-      return
-    end
-
     @movement = Movement.new(set_params)
     @movement.amount.to_f
     @movement.author_id = current_user.id
@@ -21,6 +16,16 @@ class MovementsController < ApplicationController
     else
       render :new, alert: 'Error creating the Transaction'
     end
+  end
+
+  private
+
+  def set_user
+    @user = current_user
+  end
+
+  def set_category
+    @category = @user.categories.find(params[:category_id])
   end
 
   def set_params
