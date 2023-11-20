@@ -12,9 +12,10 @@ class MovementsController < ApplicationController
       return
     end
 
-    @movement = @category.movements.build(set_params)
+    @movement = Movement.new(set_params)
     @movement.author_id = current_user.id
-    if @movement.save
+    @category.movements << @movement
+    if @movement.save!
       redirect_to category_path(@category), notice: 'Transaction created successfully'
     else
       render :new, alert: 'Error creating the Transaction'

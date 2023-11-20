@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = current_user.categories.find(params[:id])
-    @movements = Movement.where(author_id: current_user.id)
+    @movements = @category.movements
     @total_amount = @movements.sum(&:amount)
   end
 
